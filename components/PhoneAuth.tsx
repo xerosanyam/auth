@@ -13,7 +13,7 @@ export default function PhoneAuth() {
     await postMobileNumber(mobileNumber)
       .then((confirmationResult) => {
         console.log(confirmationResult);
-        setConfirmationResult(confirmationResult);
+        // setConfirmationResult(confirmationResult);
       })
       .catch((error) => {
         console.log(error);

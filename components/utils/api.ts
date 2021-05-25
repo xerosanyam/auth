@@ -1,17 +1,12 @@
-const url = 'http://localhost:3000'
+const url = "http://localhost:3001";
 export const postMobileNumber = async (mobileNumber: string) => {
-  const response = await fetch(`${url}/getOTP`, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
+  console.log(mobileNumber);
+  const response = await fetch(`${url}/postMobileNumber`, {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
+      "Content-Type": "application/json",
     },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify(mobileNumber) // body data type must match "Content-Type" header
+    body: JSON.stringify({ mobileNumber }),
   });
-  return response.json()
-}
+  return response.json();
+};
