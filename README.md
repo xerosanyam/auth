@@ -1,6 +1,7 @@
 # Auth
 
-This is a project to build Phone Auth
+This is a project to build Phone Auth  
+Deployed at <https://auth-xerosanyam.vercel.app/>
 
 ## Getting Started
 
