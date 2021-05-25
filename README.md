@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Auth
+
+This is a project to build Phone Auth
 
 ## Getting Started
 
@@ -9,25 +11,38 @@ npm run dev
 npm run server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Todos
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[x] generate 6 digit otp  
+[] otp valid for 60 seconds
+[x] validate otp
+[] send sms/phone-call  
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+[x] form accepts mobile number  
+[] validate mobile number format
+[x] option to send new otp
+[] add styles
+[] offer choice b/w sms/phone
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Todos Additional
 
-## Learn More
+[] use ip address, other info to generate requestId, verifyOTP with this id instead of mobile number
 
-To learn more about Next.js, take a look at the following resources:
+## APIs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. POST `/postMobileNumber`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+{
+    "mobileNumber":123
+}
+```
 
-## Deploy on Vercel
+2. POST `/verifyOTP`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+{
+    "mobileNumber":123,
+    "OTP": "02915"
+}
+```
